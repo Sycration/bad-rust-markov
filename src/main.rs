@@ -6,13 +6,20 @@ use rand::{distributions::WeightedIndex, prelude::Distribution, thread_rng, Rng}
 use tinyvec::TinyVec;
 use unicode_segmentation::UnicodeSegmentation;
 
+
 fn main() {
+    let INPUT_LENGTH = 2; //1 or 2
+    let OUTPUT_LENGTH = 2000; //1 or 2
+    let STARTING_POINT = "goes here"; //must exist in the training data
+
+
+
     let m = MarkovBuilder::new()
-        .input_length(2)
+
+        .input_length(INPUT_LENGTH)
         .data_path("data")
         .train();
-    //dbg!(&m.map);
-    println!("{}",  m.generate("fn main()", 1400));
+    println!("{}",  m.generate(STARTING_POINT, OUTPUT_LENGTH));
 }
 
 struct Markov {
