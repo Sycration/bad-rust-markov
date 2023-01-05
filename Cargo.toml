@@ -1,0 +1,14 @@
+[package]
+name = "gen"
+version = "0.1.0"
+authors = ["Sycration <sycration@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+itertools = "0.10.5"
+memmap2 = "0.5.8"
+rand = "0.8.5"
+tinyvec = {version = "1.6.0", features = ["alloc"]}
+unicode-segmentation = "1.10.0"
